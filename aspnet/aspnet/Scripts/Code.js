@@ -109,6 +109,7 @@ function Common_CheckForPlugIn() {
             return CheckForPlugIn_Async();
         });
     } else {
+    
         return CheckForPlugIn_NPAPI();
     }
 }
