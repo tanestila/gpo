@@ -1,0 +1,69 @@
+﻿<div id="min-width">
+    <div id="container">
+        <div id="header">
+            <h1>Проверка работы КриптоПро ЭЦП Browser plug-in</h1>
+            <div class="mainContent">
+                <div id="left-col">
+                    <div id="info">
+                        <div id="info_msg" style="text-align:center;">
+                            <span id="PlugInEnabledTxt">Проверка</span>
+                            <br>
+                            <span id="PlugInVersionTxt" lang="ru"> </span>
+                            <span id="CSPVersionTxt" lang="ru"> </span>
+                            <br>
+                            <span id="CSPNameTxt" lang="ru"> </span>
+                        </div>
+                    </div>
+                    <p id="info_msg" name="CertificateTitle">Сертификат:</p>
+                    <div id="item_border" name="CertListBoxToHide">
+                        <select size="4" name="CertListBox" id="CertListBox" style="width:100%;resize:none;border:0;"></select>
+                    </div>
+                    <div id="boxdiv" style="display:none">
+                        <span id="errorarea">
+                            У вас отсутствуют личные сертификаты. Вы можете получить сертификат от тестового УЦ, предварительно установив корневой сертификат тестового УЦ в доверенные.
+                        </span>
+                    </div>
+                </div>
+
+                <div id="cert_info">
+                    <h2>Информация о сертификате</h2>
+                    <p class="info_field" id="subject"></p>
+                    <p class="info_field" id="issuer"></p>
+                    <p class="info_field" id="from"></p>
+                    <p class="info_field" id="till"></p>
+                    <p class="info_field" id="provname"></p>
+                    <p class="info_field" id="algorithm"></p>
+                    <p class="info_field" id="status"></p>
+                </div>
+                <p id="info_msg">Данные для подписи:</p>
+                <div>
+                    <textarea id="DataToSignTxtBox" name="DataToSignTxtBox" style="height:200px;width:100%;resize:none;border:1;"></textarea>
+                </div>
+
+                <div class="layout">
+                    <input id="SignBtn" type="button" value="Подписать" name="SignData" onclick="SignCadesXML_NPAPI('CertListBox');" />
+                </div>
+                <input id="" type="button" value="Скачать" name="Download" onclick="" />
+                <input id="LookBtn" type="button" value="Показать" name="Look" onclick="LookSign();" />
+                <p id="info_msg" name="SignatureTitle">Подпись:</p>
+                <div id="item_border">
+                    <textarea id="SignatureTxtBox" readonly style="font-size:9pt;height:600px;width:100%;resize:none;border:0;visibility:hidden  ">
+                                        </textarea>
+                    <script language="javascript">
+                        CheckForPlugIn_NPAPI('isPlugInEnabled');
+
+                    </script>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<h3>Выберите файл для загрузки</h3>
+@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <a href="@Url.Action("Download", new {path = item.path})" class="not-filled recent"></a><br />
+}
+
