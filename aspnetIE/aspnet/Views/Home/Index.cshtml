@@ -41,32 +41,23 @@
                 </div>
 
                 <div class="layout">
-                    <input id="SignBtn" type="button" value="Подписать" name="SignData" onclick="SignCadesXML_NPAPI('CertListBox');" />
+                    <input id="SignBtn" type="button" value="Подписать" name="SignData" style="height:30px; width:100px" onclick="SignCadesXML_NPAPI('CertListBox');" />
                 </div>
-                <input id="" type="button" value="Скачать" name="Download" onclick="" />
-                <input id="LookBtn" type="button" value="Показать" name="Look" onclick="LookSign();" />
                 <p id="info_msg" name="SignatureTitle">Подпись:</p>
+                <input id="LookBtn" type="button" value="Показать" hidden name="Look" style="height:30px; width:100px" onclick="LookSign();" />
+
                 <div id="item_border">
-                    @*<textarea id="SignatureTxtBox" readonly style="font-size:9pt;height:600px;width:100%;resize:none;border:0;visibility:hidden  ">
-                        </textarea>*@
-                    <script language="javascript">
-                        CheckForPlugIn_NPAPI('isPlugInEnabled');
-
-                    </script>
-
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-<h3>Выберите файл для загрузки</h3>
-@using (Html.BeginForm("GetFile", "Home", FormMethod.Post))
-{
-    <input type="submit" value="Скачать" />
-    <textarea name="SignedXml" id="SignatureTxtBox" readonly style="font-size:9pt;height:600px;width:100%;resize:none;border:0;visibility:hidden  ">
+                    @using (Html.BeginForm("GetFile", "Home", FormMethod.Post))
+        {
+            <input type="submit" id="DownloadBtn" value="Скачать"  hidden style="height:30px; width:100px" />
+            <textarea name="SignedXml" id="SignatureTxtBox" readonly hidden style="font-size:9pt;height:600px;width:100%;resize:none;border:0">
                                         </textarea>
 }
-
+                    <script language="javascript">
+                        CheckForPlugIn_NPAPI('isPlugInEnabled');
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

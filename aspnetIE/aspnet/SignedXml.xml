@@ -1,46 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!-- 
- Original XML doc file for sign example. 
--->
 <Envelope xmlns="urn:envelope">
-  <Yazb>
-DAAAAA
-</Yazb>
-  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-    <SignedInfo>
-      <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
-      <SignatureMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256" />
-      <Reference URI="">
-        <Transforms>
-          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
-          <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
-        </Transforms>
-        <DigestMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256" />
-        <DigestValue>8BCkgaUEvnVGwop6y7PfxtKUhp3jtCJhdo5jaA2oDwU=</DigestValue>
-      </Reference>
-    </SignedInfo>
-    <SignatureValue>ZopBcNV4/Gqxtu1oKWk8PrOSFvauQ+/izzieqRvG/7q2jrnwBYQIYN0XLXXVujLm
-3nD0ckYfp7k3nJSFSFlXoA==</SignatureValue>
-    <KeyInfo>
-      <X509Data>
-        <X509Certificate>MIIDCTCCArigAwIBAgITEgAm79Qd7g76Q0jNPgAAACbv1DAIBgYqhQMCAgMwfzEj
+123
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256" /><DigestValue>M4Wg33TPZ0z6tz9hHtLLJE8ME+HziwbcQC+m+DWiWk4=</DigestValue></Reference></SignedInfo><SignatureValue>ZyIvmBT5NRnoQZ1tH2LoDwxgcH+CLT2tdhNdzVVp0wcvt1XOiyJsZxcYYbar05YQ
+x2d/LMohSBUGJdEwANAY8A==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIDcjCCAyGgAwIBAgITEgAmqJUX7BLs+bkOYAAAACaolTAIBgYqhQMCAgMwfzEj
 MCEGCSqGSIb3DQEJARYUc3VwcG9ydEBjcnlwdG9wcm8ucnUxCzAJBgNVBAYTAlJV
 MQ8wDQYDVQQHEwZNb3Njb3cxFzAVBgNVBAoTDkNSWVBUTy1QUk8gTExDMSEwHwYD
-VQQDExhDUllQVE8tUFJPIFRlc3QgQ2VudGVyIDIwHhcNMTgwMzIyMTg0MTI1WhcN
-MTgwNjIyMTg1MTI1WjAVMRMwEQYDVQQDDArQn9Cw0LLQtdC7MGYwHwYIKoUDBwEB
-AQEwEwYHKoUDAgIkAAYIKoUDBwEBAgIDQwAEQKR5dASTqfZWfdN/UwCxwLXCo2X5
-ghD+mb6VlTl0g33kM7HNaX4mYJz33/k3g0fZLJqZyI6ZLWULgTZVLFkKqVGjggFw
-MIIBbDAOBgNVHQ8BAf8EBAMCBPAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwHQYDVR0O
-BBYEFPOBemNeFb2EFftg4cojycuOmOSHMB8GA1UdIwQYMBaAFBUxfLCNGt5m1xWc
-SVKXFyS5AXqDMFkGA1UdHwRSMFAwTqBMoEqGSGh0dHA6Ly90ZXN0Y2EuY3J5cHRv
-cHJvLnJ1L0NlcnRFbnJvbGwvQ1JZUFRPLVBSTyUyMFRlc3QlMjBDZW50ZXIlMjAy
-LmNybDCBqQYIKwYBBQUHAQEEgZwwgZkwYQYIKwYBBQUHMAKGVWh0dHA6Ly90ZXN0
-Y2EuY3J5cHRvcHJvLnJ1L0NlcnRFbnJvbGwvdGVzdC1jYS0yMDE0X0NSWVBUTy1Q
-Uk8lMjBUZXN0JTIwQ2VudGVyJTIwMi5jcnQwNAYIKwYBBQUHMAGGKGh0dHA6Ly90
-ZXN0Y2EuY3J5cHRvcHJvLnJ1L29jc3Avb2NzcC5zcmYwCAYGKoUDAgIDA0EA3EBQ
-j/3vpmmr/qqhS78cqQINagCK+2vcNUeedZqNSmAPArRqsudlaMQ2qpOVgnT1O1mb
-u90V2SU0oCAaHblZGg==</X509Certificate>
-      </X509Data>
-    </KeyInfo>
-  </Signature>
-</Envelope>
+VQQDExhDUllQVE8tUFJPIFRlc3QgQ2VudGVyIDIwHhcNMTgwMzE0MDUxNTA1WhcN
+MTgwNjE0MDUyNTA1WjB+MSIwIAYJKoZIhvcNAQkBFhNwYXNoa2E0OTlAeWFuZGV4
+LnJ1MQ4wDAYDVQQDDAVQYXZlbDELMAkGA1UECwwCZmIxDjAMBgNVBAoMBXR1c3Vy
+MQ4wDAYDVQQHDAVUb21zazEOMAwGA1UECAwFdG9tc2sxCzAJBgNVBAYTAlJVMGYw
+HwYIKoUDBwEBAQEwEwYHKoUDAgIkAAYIKoUDBwEBAgIDQwAEQI6Dmv/q7Saz1+cP
+ChQllwhu5quyjoqoOXJZJAapLooolyTZjifMfHgRVCgTPfgsfIlorHcSV1Fp4oqB
+SYJFhIajggFwMIIBbDAOBgNVHQ8BAf8EBAMCBPAwEwYDVR0lBAwwCgYIKwYBBQUH
+AwIwHQYDVR0OBBYEFFxu3oxDO9kIRpixej6FprBQDqeyMB8GA1UdIwQYMBaAFBUx
+fLCNGt5m1xWcSVKXFyS5AXqDMFkGA1UdHwRSMFAwTqBMoEqGSGh0dHA6Ly90ZXN0
+Y2EuY3J5cHRvcHJvLnJ1L0NlcnRFbnJvbGwvQ1JZUFRPLVBSTyUyMFRlc3QlMjBD
+ZW50ZXIlMjAyLmNybDCBqQYIKwYBBQUHAQEEgZwwgZkwYQYIKwYBBQUHMAKGVWh0
+dHA6Ly90ZXN0Y2EuY3J5cHRvcHJvLnJ1L0NlcnRFbnJvbGwvdGVzdC1jYS0yMDE0
+X0NSWVBUTy1QUk8lMjBUZXN0JTIwQ2VudGVyJTIwMi5jcnQwNAYIKwYBBQUHMAGG
+KGh0dHA6Ly90ZXN0Y2EuY3J5cHRvcHJvLnJ1L29jc3Avb2NzcC5zcmYwCAYGKoUD
+AgIDA0EAOoPPmwZo+QrYwdv3vLwevdBW45Gk01sLq0YLcRrAkQigEUakEj1X1HTi
+FlmA9CYtnhPbxNyRUxJZ8zRtPiuAfA==</X509Certificate></X509Data></KeyInfo></Signature></Envelope>

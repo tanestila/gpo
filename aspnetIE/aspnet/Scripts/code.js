@@ -36,7 +36,7 @@ function MakeXMLSign_NPAPI(dataToSign, certObject) {
         digestMethod = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr3411";
     }
     else {
-        errormes = "Данная демо страница поддерживает XML подпись сертификатами с алгоритмом ГОСТ Р 34.10-2012, ГОСТ Р 34.10-2001";
+        errormes = "Данная страница поддерживает XML подпись сертификатами с алгоритмом ГОСТ Р 34.10-2012, ГОСТ Р 34.10-2001";
         throw errormes;
     }
 
@@ -84,29 +84,26 @@ function GetSignatureTitleElement() {
     return elementSignatureTitle;
 }
 function LookSign() {
-    document.getElementById("SignatureTxtBox").setAttribute('style', 'font-size:9pt;height:600px;width:100%;resize:none;border:0;visibility:visible ');
+    if (document.getElementById("SignatureTxtBox").hidden)
+        document.getElementById("SignatureTxtBox").hidden = false;
+    else document.getElementById("SignatureTxtBox").hidden = true;
 }
 function SignCadesXML_NPAPI(certListBoxId) {
     var certificate = GetCertificate_NPAPI(certListBoxId);
-    //document.getElementById("DataToSignTxtBox").value = txtDataToSign;
     document.getElementById("SignatureTxtBox").innerHTML = "";
     var dataToSign = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-        "<!-- \n" +
-        " Original XML doc file for sign example. \n" +
-        "--> \n" +
         "<Envelope xmlns=\"urn:envelope\">\n" +
-        //"  <Data>\n" +
         document.getElementById("DataToSignTxtBox").value + "\n" +
-        //"  </Data>\n" +
         "</Envelope>";
     var x = GetSignatureTitleElement();
     try {
-        //FillCertInfo_NPAPI(certificate);
         var signature = MakeXMLSign_NPAPI(dataToSign, certificate);
         document.getElementById("SignatureTxtBox").innerHTML = signature;
 
         if (x != null) {
             x.innerHTML = "Подпись сформирована успешно:";
+            document.getElementById("LookBtn").hidden = false;
+            document.getElementById("DownloadBtn").hidden = false;
         }
     }
     catch (err) {
@@ -114,6 +111,8 @@ function SignCadesXML_NPAPI(certListBoxId) {
             x.innerHTML = "Возникла ошибка:";
         }
         document.getElementById("SignatureTxtBox").innerHTML = err;
+        document.getElementById("LookBtn").hidden = true;
+        document.getElementById("DownloadBtn").hidden = true;
     }
 }
 function FillCertInfo_NPAPI(certificate, certBoxId) {
@@ -177,6 +176,20 @@ function getXmlHttp() {
     }
     return xmlhttp;
 } 
+function Verify(sSignedMessage) {
+
+    // Создаем объект CAdESCOM.SignedXML
+    var oSignedXML = cadesplugin.CreateObject("CAdESCOM.SignedXML");
+
+    try {
+        oSignedXML.Verify(sSignedMessage);
+    } catch (err) {
+        alert("Failed to verify signature. Error: " + cadesplugin.getLastError(err));
+        return false;
+    }
+
+    return true;
+}
 function GetCertificate_NPAPI(certListBoxId) {
     var e = document.getElementById(certListBoxId);
     var selectedCertID = e.selectedIndex;
