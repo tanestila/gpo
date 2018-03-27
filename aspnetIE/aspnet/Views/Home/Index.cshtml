@@ -47,12 +47,13 @@
                 <input id="LookBtn" type="button" value="Показать" name="Look" onclick="LookSign();" />
                 <p id="info_msg" name="SignatureTitle">Подпись:</p>
                 <div id="item_border">
-                    <textarea id="SignatureTxtBox" readonly style="font-size:9pt;height:600px;width:100%;resize:none;border:0;visibility:hidden  ">
-                                        </textarea>
+                    @*<textarea id="SignatureTxtBox" readonly style="font-size:9pt;height:600px;width:100%;resize:none;border:0;visibility:hidden  ">
+                        </textarea>*@
                     <script language="javascript">
                         CheckForPlugIn_NPAPI('isPlugInEnabled');
 
                     </script>
+
                 </div>
             </div>
 
@@ -62,8 +63,10 @@
 
 </div>
 <h3>Выберите файл для загрузки</h3>
-@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("GetFile", "Home", FormMethod.Post))
 {
-    <a href="@Url.Action("Download", new {path = item.path})" class="not-filled recent"></a><br />
+    <input type="submit" value="Скачать" />
+    <textarea name="SignedXml" id="SignatureTxtBox" readonly style="font-size:9pt;height:600px;width:100%;resize:none;border:0;visibility:hidden  ">
+                                        </textarea>
 }
 

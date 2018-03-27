@@ -95,12 +95,9 @@ function SignCadesXML_NPAPI(certListBoxId) {
         " Original XML doc file for sign example. \n" +
         "--> \n" +
         "<Envelope xmlns=\"urn:envelope\">\n" +
-        "  <Data>\n" +
+        //"  <Data>\n" +
         document.getElementById("DataToSignTxtBox").value + "\n" +
-        "  </Data>\n" +
-        //"  <Node xml:id=\"nodeID\">\n" +
-        //"	Hello, Node!\n" +
-        //"  </Node>\n" +
+        //"  </Data>\n" +
         "</Envelope>";
     var x = GetSignatureTitleElement();
     try {

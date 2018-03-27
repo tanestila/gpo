@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Security.Cryptography;
 using System.Xml;
+using aspnet.Models;
 
 namespace aspnet.Controllers
 {
@@ -29,6 +30,24 @@ namespace aspnet.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        [HttpPost, ValidateInput(false)]
+        public FileResult GetFile(string SignedXml)
+        {
+
+            CreateXml(SignedXml);
+            string file_path = Server.MapPath("~/SignedXml.xml");
+            // Тип файла - content-type
+            string file_type = "application/xml";
+            // Имя файла - необязательно
+            string file_name = "SignedXml.xml";
+            return File(file_path, file_type, file_name);
+        }
+        public void CreateXml(string text)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(text);
+            doc.Save(Server.MapPath("/SignedXml.xml"));
         }
         //[HttpPost]
         //public ActionResult Upload(HttpPostedFileBase upload)
