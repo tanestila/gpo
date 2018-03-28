@@ -7,7 +7,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Security.Cryptography;
 using System.Xml;
-
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Security.Cryptography.Xml;
 namespace aspnet.Controllers
 {
     public class HomeController : Controller
@@ -17,28 +19,13 @@ namespace aspnet.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
         [HttpPost, ValidateInput(false)]
         public FileResult GetFile(string SignedXml)
         {
 
             CreateXml(SignedXml);
             string file_path = Server.MapPath("~/SignedXml.xml");
-            // Тип файла - content-type
             string file_type = "application/xml";
-            // Имя файла - необязательно
             string file_name = "SignedXml.xml";
             return File(file_path, file_type, file_name);
         }
@@ -58,5 +45,28 @@ namespace aspnet.Controllers
             }
             return RedirectToAction("Index");
         }
+        [HttpPost, ValidateInput(false)]
+        public ActionResult Verify(string DataToVerifyTxtBox, string VerifyTitle)
+        {
+            XmlDocument xml = new XmlDocument();
+            xml.LoadXml(DataToVerifyTxtBox);
+            SignedXml sxml = new SignedXml(xml);
+            XmlNodeList nodeList = xml.GetElementsByTagName("Signature");
+            sxml.LoadXml((XmlElement)nodeList[0]);
+            VerifyTitle = sxml.SigningKeyName + "  " + sxml.SignedInfo + sxml.KeyInfo;
+            return View();
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
