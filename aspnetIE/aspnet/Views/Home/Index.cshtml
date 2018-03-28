@@ -1,6 +1,6 @@
 ﻿<div id="min-width">
     <div id="container"> 
-            <h3 class="text-center">Проверка работы КриптоПро ЭЦП Browser plug-in</h3>
+            <h3 class="text-center">Подпись и проверка XmlDSig</h3>
             <div class="mainContent">
                 <div id="info">
                     <div id="info_msg" style="text-align:center;">
@@ -50,18 +50,13 @@
                         </div>
 
                         <div class="layout">
-                            <!--<input id="SignBtn" type="button" value="Подписать" name="SignData" style="height:30px; width:100px" onclick="SignCadesXML_NPAPI('CertListBox');" class="btn btn-primary" />-->
                             <button id="SignBtn" name="SignData" type="button" class="btn btn-light" onclick="SignCadesXML_NPAPI('CertListBox');">Подписать</button>
                         </div>
                         <p id="info_msg" name="SignatureTitle"></p>
-                        <!--<input id="LookBtn" type="button" value="Показать" hidden name="Look" style="height:30px; width:100px" onclick="LookSign();" />-->
-
-
                         <div id="item_border">
 
                             @using (Html.BeginForm("GetFile", "Home", FormMethod.Post))
         {
-                    <!--<input type="submit" id="DownloadBtn" value="Скачать" hidden style="height:30px; width:100px" />-->
                     <button id="LookBtn" type="button" name="Look" class="btn btn-light" onclick="LookSign();" hidden>Показать</button>
                     <button id="DownloadBtn" type="submit" class="btn btn-light" hidden>Скачать</button>
                     <textarea name="SignedXml" id="SignatureTxtBox" readonly hidden style="font-size:9pt;height:600px;width:100%;resize:none;border:0"></textarea>
@@ -73,8 +68,15 @@
                     </div>
 
                     <div id="panel2" class="tab-pane fade">
-                        <h3>Панель 2</h3>
-                        <p>Содержимое 2 панели...</p>
+                        <h3>Проверка подписи</h3>
+
+                        <div>
+                            <textarea id="DataToVerifyTxtBox" name="DataToVerifyTxtBox" style="height:200px;width:100%;resize:none;border:1;"></textarea>
+
+                            <button id="VerifyBtn" name="VerifyData" type="button" class="btn btn-light" onclick="Verify();">Проверить</button>
+
+                            <p id="verify_msg" name="VerifyTitle"></p>
+                        </div>
                     </div>
 
                 </div>

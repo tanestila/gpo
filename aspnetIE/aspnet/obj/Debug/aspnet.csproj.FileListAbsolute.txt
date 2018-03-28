@@ -405,7 +405,6 @@ C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\ru\System.Web.WebPages.r
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\ru\System.Web.WebPages.Deployment.resources.dll
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\ru\System.Web.WebPages.Razor.resources.dll
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\ru\System.Web.Optimization.resources.dll
-C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\obj\Debug\aspnet.csprojResolveAssemblyReference.cache
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\obj\Debug\aspnet.csproj.CoreCompileInputs.cache
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\obj\Debug\aspnet.csproj.CopyComplete
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\obj\Debug\aspnet.dll

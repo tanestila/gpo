@@ -177,19 +177,18 @@ function getXmlHttp() {
     }
     return xmlhttp;
 } 
-function Verify(sSignedMessage) {
+function Verify() {
 
     // Создаем объект CAdESCOM.SignedXML
+    sSignedMessage = document.getElementById("DataToVerifyTxtBox").value;
     var oSignedXML = cadesplugin.CreateObject("CAdESCOM.SignedXML");
 
     try {
         oSignedXML.Verify(sSignedMessage);
+        document.getElementById("verify_msg").innerHTML = "Подпись подтверждена";
     } catch (err) {
-        alert("Failed to verify signature. Error: " + cadesplugin.getLastError(err));
-        return false;
+        document.getElementById("verify_msg").innerHTML = "Ошибка в проверке подписи : " + cadesplugin.getLastError(err);
     }
-
-    return true;
 }
 function GetCertificate_NPAPI(certListBoxId) {
     var e = document.getElementById(certListBoxId);
