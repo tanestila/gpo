@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    margin: 10px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -20,4 +21,15 @@
 input,
 select{
     max-width: 280px;
+}
+
+#errorarea {
+    color: red;
+}
+button {
+    margin: 10px 0 10px 0;
+}
+
+.nav {
+    margin: 10px 0 10px 0;
 }

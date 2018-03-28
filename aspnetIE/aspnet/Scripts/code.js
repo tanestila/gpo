@@ -101,7 +101,7 @@ function SignCadesXML_NPAPI(certListBoxId) {
         document.getElementById("SignatureTxtBox").innerHTML = signature;
 
         if (x != null) {
-            x.innerHTML = "Подпись сформирована успешно:";
+            x.innerHTML = "Подпись сформирована успешно";
             document.getElementById("LookBtn").hidden = false;
             document.getElementById("DownloadBtn").hidden = false;
         }
@@ -139,6 +139,7 @@ function FillCertInfo_NPAPI(certificate, certBoxId) {
     var Now = new Date();
 
     var certObj = new CertificateObj(certificate);
+    document.getElementById("cert_txt").setAttribute('style', 'visibility: visible;');
     document.getElementById(BoxId).style.display = '';
     document.getElementById(field_prefix + "subject").innerHTML = "Владелец: <b>" + certObj.GetCertName() + "<b>";
     document.getElementById(field_prefix + "issuer").innerHTML = "Издатель: <b>" + certObj.GetIssuer() + "<b>";

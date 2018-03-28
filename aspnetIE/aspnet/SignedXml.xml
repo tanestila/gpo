@@ -1,23 +1,40 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Envelope xmlns="urn:envelope">
-123
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256" /><DigestValue>M4Wg33TPZ0z6tz9hHtLLJE8ME+HziwbcQC+m+DWiWk4=</DigestValue></Reference></SignedInfo><SignatureValue>ZyIvmBT5NRnoQZ1tH2LoDwxgcH+CLT2tdhNdzVVp0wcvt1XOiyJsZxcYYbar05YQ
-x2d/LMohSBUGJdEwANAY8A==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIDcjCCAyGgAwIBAgITEgAmqJUX7BLs+bkOYAAAACaolTAIBgYqhQMCAgMwfzEj
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+      <SignatureMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256" />
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+          <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+        </Transforms>
+        <DigestMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256" />
+        <DigestValue>JvSRlxYDd70UaMX3+Ury1Ziy71nuJ++BRvJY2/+Nq88=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>3kY2r6sL9Y0/mHKgKzV392iw9FPq1IAM30vbYvyAHZbrkcuQX84EcdrWj5IbXcR7
+RucQe8TcxoE8prJV5Pw4ZQ==</SignatureValue>
+    <KeyInfo>
+      <X509Data>
+        <X509Certificate>MIIDIDCCAs+gAwIBAgITEgAnFhG7KK2en5SNbwAAACcWETAIBgYqhQMCAgMwfzEj
 MCEGCSqGSIb3DQEJARYUc3VwcG9ydEBjcnlwdG9wcm8ucnUxCzAJBgNVBAYTAlJV
 MQ8wDQYDVQQHEwZNb3Njb3cxFzAVBgNVBAoTDkNSWVBUTy1QUk8gTExDMSEwHwYD
-VQQDExhDUllQVE8tUFJPIFRlc3QgQ2VudGVyIDIwHhcNMTgwMzE0MDUxNTA1WhcN
-MTgwNjE0MDUyNTA1WjB+MSIwIAYJKoZIhvcNAQkBFhNwYXNoa2E0OTlAeWFuZGV4
-LnJ1MQ4wDAYDVQQDDAVQYXZlbDELMAkGA1UECwwCZmIxDjAMBgNVBAoMBXR1c3Vy
-MQ4wDAYDVQQHDAVUb21zazEOMAwGA1UECAwFdG9tc2sxCzAJBgNVBAYTAlJVMGYw
-HwYIKoUDBwEBAQEwEwYHKoUDAgIkAAYIKoUDBwEBAgIDQwAEQI6Dmv/q7Saz1+cP
-ChQllwhu5quyjoqoOXJZJAapLooolyTZjifMfHgRVCgTPfgsfIlorHcSV1Fp4oqB
-SYJFhIajggFwMIIBbDAOBgNVHQ8BAf8EBAMCBPAwEwYDVR0lBAwwCgYIKwYBBQUH
-AwIwHQYDVR0OBBYEFFxu3oxDO9kIRpixej6FprBQDqeyMB8GA1UdIwQYMBaAFBUx
-fLCNGt5m1xWcSVKXFyS5AXqDMFkGA1UdHwRSMFAwTqBMoEqGSGh0dHA6Ly90ZXN0
-Y2EuY3J5cHRvcHJvLnJ1L0NlcnRFbnJvbGwvQ1JZUFRPLVBSTyUyMFRlc3QlMjBD
-ZW50ZXIlMjAyLmNybDCBqQYIKwYBBQUHAQEEgZwwgZkwYQYIKwYBBQUHMAKGVWh0
-dHA6Ly90ZXN0Y2EuY3J5cHRvcHJvLnJ1L0NlcnRFbnJvbGwvdGVzdC1jYS0yMDE0
-X0NSWVBUTy1QUk8lMjBUZXN0JTIwQ2VudGVyJTIwMi5jcnQwNAYIKwYBBQUHMAGG
-KGh0dHA6Ly90ZXN0Y2EuY3J5cHRvcHJvLnJ1L29jc3Avb2NzcC5zcmYwCAYGKoUD
-AgIDA0EAOoPPmwZo+QrYwdv3vLwevdBW45Gk01sLq0YLcRrAkQigEUakEj1X1HTi
-FlmA9CYtnhPbxNyRUxJZ8zRtPiuAfA==</X509Certificate></X509Data></KeyInfo></Signature></Envelope>
+VQQDExhDUllQVE8tUFJPIFRlc3QgQ2VudGVyIDIwHhcNMTgwMzI4MDIxNzE2WhcN
+MTgwNjI4MDIyNzE2WjAsMR0wGwYDVQQDDBTQkNC70LXQutGB0LDQvdC00YDQsDEL
+MAkGA1UEBhMCUVcwZjAfBggqhQMHAQEBATATBgcqhQMCAiQABggqhQMHAQECAgND
+AARAcOyrhhwaaFjffKWZ1zizKRvm6v84DDB9yjQ0FMTtmr/4zVaLQM3Kycez6MK2
+iLdBtbJFygxOT1ofyaSc2bSdA6OCAXAwggFsMA4GA1UdDwEB/wQEAwIE8DATBgNV
+HSUEDDAKBggrBgEFBQcDAjAdBgNVHQ4EFgQUF76ks3b5xgoz6q1Mueee0FOKl54w
+HwYDVR0jBBgwFoAUFTF8sI0a3mbXFZxJUpcXJLkBeoMwWQYDVR0fBFIwUDBOoEyg
+SoZIaHR0cDovL3Rlc3RjYS5jcnlwdG9wcm8ucnUvQ2VydEVucm9sbC9DUllQVE8t
+UFJPJTIwVGVzdCUyMENlbnRlciUyMDIuY3JsMIGpBggrBgEFBQcBAQSBnDCBmTBh
+BggrBgEFBQcwAoZVaHR0cDovL3Rlc3RjYS5jcnlwdG9wcm8ucnUvQ2VydEVucm9s
+bC90ZXN0LWNhLTIwMTRfQ1JZUFRPLVBSTyUyMFRlc3QlMjBDZW50ZXIlMjAyLmNy
+dDA0BggrBgEFBQcwAYYoaHR0cDovL3Rlc3RjYS5jcnlwdG9wcm8ucnUvb2NzcC9v
+Y3NwLnNyZjAIBgYqhQMCAgMDQQCPhTqDBE/6qGzqkh8wWAjXjFTsGE82nofGqFnT
+cArWrSGphfyEn1++GGeH8aaEliaiBq43XdE3r2ivixf1ktBe</X509Certificate>
+      </X509Data>
+    </KeyInfo>
+  </Signature>
+</Envelope>
