@@ -722,3 +722,5 @@ C:\Users\Александра\Documents\GitHub\gpo\aspnetIE\aspnet\obj\Debug\asp
 C:\Users\Александра\Documents\GitHub\gpo\aspnetIE\aspnet\obj\Debug\aspnet.pdb
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\obj\Debug\aspnet.csprojResolveAssemblyReference.cache
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Security.Cryptography.Xml.dll
+C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\System.Security.Cryptography.Xml.dll
+C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\obj\Debug\aspnet.csprojResolveAssemblyReference.cache
