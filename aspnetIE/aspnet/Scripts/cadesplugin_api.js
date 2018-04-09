@@ -8,6 +8,7 @@
     var plugin_reject;
     var plugin_resolve;
     var isOpera = 0;
+    var isChrome = 0;
     var isFireFox = 0;
     var isEdge = 0;
     var failed_extensions = 0;
@@ -211,6 +212,7 @@
     }
 
     function isNativeMessageSupported() {
+        
         // В IE работаем через NPAPI
         if (isIE())
             return false;
@@ -239,7 +241,8 @@
             }
         }
         if (browserSpecs.name == 'Chrome') {
-            if (browserSpecs.version >= 42) {
+            isChrome = true;
+            if (browserSpecs.version >= 42) {              
                 return true;
             }
             else {
@@ -493,6 +496,7 @@
 
     //Загружаем плагин для NPAPI
     function load_npapi_plugin() {
+        
         var elem = document.createElement('object');
         elem.setAttribute("id", "cadesplugin_object");
         elem.setAttribute("type", "application/x-cades");
@@ -510,40 +514,53 @@
             elem2.setAttribute("classid", "clsid:B04C8637-10BD-484E-B0DA-B8A039F60024");
             elem2.setAttribute("style", "visibility: hidden");
             document.getElementsByTagName("body")[0].appendChild(elem2);
+            
         }
+    }
+    function messageAboutPlugin() {
+        if (isOpera == true) {
+            alert("Сайт может работать некорректно");
+        } else if (isFireFox == true) {
+            alert("Сайт может работать некорректно");
+        } else if (isEdge == true) {
+            alert("Сайт может работать некорректно");
+        } else if (isChrome == true) {
+                alert("Сайт может работать некорректно");
+            }
+        
     }
 
     //Отправляем событие что все ок.
-    function plugin_loaded() {
-        plugin_resolved = 1;
-        if (canPromise) {
-            plugin_resolve();
-        } else {
-            window.postMessage("cadesplugin_loaded", "*");
-        }
-    }
-
+    //function plugin_loaded() {
+    //    plugin_resolved = 1;
+    //    if (canPromise) {
+    //        plugin_resolve();
+    //    } else {
+    //        window.postMessage("cadesplugin_loaded", "*");
+    //    }
+    //}
+    // 9 04 18
     //Отправляем событие что сломались.
-    function plugin_loaded_error(msg) {
-        if (isNativeMessageSupported()) {
-            //в асинхронном варианте подключаем оба расширения, если сломались оба пробуем установить для Opera
-            failed_extensions++;
-            if (failed_extensions < 2)
-                return;
-            if (isOpera && (typeof (msg) == 'undefined' || typeof (msg) == 'object')) {
-                install_opera_extension();
-                return;
-            }
-        }
-        if (typeof (msg) == 'undefined' || typeof (msg) == 'object')
-            msg = "Плагин недоступен";
-        plugin_resolved = 1;
-        if (canPromise) {
-            plugin_reject(msg);
-        } else {
-            window.postMessage("cadesplugin_load_error", "*");
-        }
-    }
+    //function plugin_loaded_error(msg) {
+    //    if (isNativeMessageSupported()) {
+    //        //в асинхронном варианте подключаем оба расширения, если сломались оба пробуем установить для Opera
+    //        failed_extensions++;
+    //        if (failed_extensions < 2)
+    //            return;
+    //        if (isOpera && (typeof (msg) == 'undefined' || typeof (msg) == 'object')) {
+    //            install_opera_extension();
+    //            return;
+    //        }
+    //    }
+    //    if (typeof (msg) == 'undefined' || typeof (msg) == 'object')
+    //        msg = "Плагин недоступен";
+    //    plugin_resolved = 1;
+    //    if (canPromise) {
+    //        plugin_reject(msg);
+    //    } else {
+    //        window.postMessage("cadesplugin_load_error", "*");
+    //    }
+    //}
 
     //проверяем что у нас хоть какое то событие ушло, и если не уходило кидаем еще раз ошибку
     function check_load_timeout() {
@@ -591,6 +608,7 @@
 
     //Проверяем работает ли плагин
     function check_plugin_working() {
+        messageAboutPlugin();
         var div = document.createElement("div");
         div.innerHTML = "<!--[if lt IE 9]><iecheck></iecheck><![endif]-->";
         var isIeLessThan9 = (div.getElementsByTagName("iecheck").length == 1);
