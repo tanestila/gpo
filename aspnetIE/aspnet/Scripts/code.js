@@ -177,6 +177,7 @@ function getXmlHttp() {
     }
     return xmlhttp;
 } 
+
 function Verify() {
 
     // Создаем объект CAdESCOM.SignedXML
@@ -189,7 +190,29 @@ function Verify() {
     } catch (err) {
         document.getElementById("verify_msg").innerHTML = "Ошибка в проверке подписи : " + cadesplugin.getLastError(err);
     }
+    getInfoFromServer();
 }
+
+function getInfoFromServer() {
+    // 1. Создаём новый объект XMLHttpRequest
+    var xhr = new XMLHttpRequest();
+
+    // 2. Конфигурируем его: GET-запрос на URL 'phones.json'
+    xhr.open('GET', 'ссылка', false);
+
+    // 3. Отсылаем запрос
+    xhr.send();
+
+    // 4. Если код ответа сервера не 200, то это ошибка
+    if (xhr.status != 200) {
+        // обработать ошибку
+        alert(xhr.status + ': ' + xhr.statusText); // пример вывода: 404: Not Found
+    } else {
+        // вывести результат
+        alert(xhr.responseText); // responseText -- текст ответа.
+    }
+}
+
 function GetCertificate_NPAPI(certListBoxId) {
     var e = document.getElementById(certListBoxId);
     var selectedCertID = e.selectedIndex;
@@ -347,19 +370,23 @@ function CheckForPlugIn_NPAPI() {
                     if (isPluginWorked) { // плагин работает, объекты создаются
                         if (VersionCompare_NPAPI(PluginBaseVersion, CurrentPluginVersion) < 0) {
                             document.getElementById('PlugInEnabledTxt').innerHTML = "Плагин загружен, но есть более свежая версия.";
+                            document.getElementById('info').setAttribute('class', 'alert alert-warning');
                         }
                     }
                     else { // плагин не работает, объекты не создаются
                         if (isPluginLoaded) { // плагин загружен
                             if (!isPluginEnabled) { // плагин загружен, но отключен
                                 document.getElementById('PlugInEnabledTxt').innerHTML = "Плагин загружен, но отключен в настройках браузера.";
+                                document.getElementById('info').setAttribute('class', 'alert alert-warning');
                             }
                             else { // плагин загружен и включен, но объекты не создаются
                                 document.getElementById('PlugInEnabledTxt').innerHTML = "Плагин загружен, но не удается создать объекты. Проверьте настройки браузера.";
+                                document.getElementById('info').setAttribute('class', 'alert alert-warning');
                             }
                         }
                         else { // плагин не загружен
                             document.getElementById('PlugInEnabledTxt').innerHTML = "Плагин не загружен.";
+                            document.getElementById('info').setAttribute('class', 'alert alert-danger');
                         }
                     }
                 }
@@ -382,6 +409,7 @@ function CheckForPlugIn_NPAPI() {
         if (typeof (CurrentPluginVersion) == "undefined")
             CurrentPluginVersion = oAbout.Version;
         document.getElementById('PlugInEnabledTxt').innerText = "Плагин загружен.";
+        document.getElementById('info').setAttribute('class', 'alert alert-success');
     }
     catch (err) {
         // Объект создать не удалось, проверим, установлен ли
