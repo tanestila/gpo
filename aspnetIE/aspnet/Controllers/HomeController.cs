@@ -45,6 +45,9 @@ namespace aspnet.Controllers
             }
             return RedirectToAction("Index");
         }
+        // НЕ НАШЛА ДАННЫХ О СЕРТИФИКАТЕ
+        // ActionResult поменять на стринг например и найти как выводить их формы 
+        //или делать еще одну функцию на GET и там отдавать странице.
         [HttpPost, ValidateInput(false)]
         public ActionResult Verify(string DataToVerifyTxtBox, string VerifyTitle)
         {
@@ -54,7 +57,25 @@ namespace aspnet.Controllers
             XmlNodeList nodeList = xml.GetElementsByTagName("Signature");
             sxml.LoadXml((XmlElement)nodeList[0]);
             VerifyTitle = sxml.SigningKeyName + "  " + sxml.SignedInfo + sxml.KeyInfo;
-            return View();
+            return new HtmlResult(VerifyTitle);
+        }
+        public class HtmlResult : ActionResult
+        {
+            private string htmlCode;
+            public HtmlResult(string html)
+            {
+                htmlCode = html;
+            }
+            public override void ExecuteResult(ControllerContext context)
+            {
+                string fullHtmlCode = "<!DOCTYPE html><html><head>";
+                fullHtmlCode += "<title>Главная страница</title>";
+                fullHtmlCode += "<meta charset=utf-8 />";
+                fullHtmlCode += "</head> <body>";
+                fullHtmlCode += htmlCode;
+                fullHtmlCode += "</body></html>";
+                context.HttpContext.Response.Write(fullHtmlCode);
+            }
         }
     }
 }
