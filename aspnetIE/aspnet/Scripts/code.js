@@ -92,9 +92,7 @@ function SignCadesXML_NPAPI(certListBoxId) {
     var certificate = GetCertificate_NPAPI(certListBoxId);
     document.getElementById("SignatureTxtBox").innerHTML = "";
     var dataToSign = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-        "<Envelope xmlns=\"urn:envelope\">\n" +
-        document.getElementById("DataToSignTxtBox").value + "\n" +
-        "</Envelope>";
+        document.getElementById("DataToSignTxtBox").value ;
     var x = GetSignatureTitleElement();
     try {
         var signature = MakeXMLSign_NPAPI(dataToSign, certificate);
