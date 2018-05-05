@@ -45,18 +45,23 @@ namespace aspnet.Controllers
             }
             return RedirectToAction("Index");
         }
-        // НЕ НАШЛА ДАННЫХ О СЕРТИФИКАТЕ
-        // ActionResult поменять на стринг например и найти как выводить их формы 
-        //или делать еще одну функцию на GET и там отдавать странице.
+        // НЕ НАШЛА ДАННЫХ О СЕРТИФИКАТЕ (лох, я нашел)
+        // ActionResult поменять на стринг например и найти как выводить их формы (ищи)
+        //или делать еще одну функцию на GET и там отдавать странице. (сложно)
         [HttpPost, ValidateInput(false)]
         public ActionResult Verify(string DataToVerifyTxtBox, string VerifyTitle)
         {
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(DataToVerifyTxtBox);
-            SignedXml sxml = new SignedXml(xml);
-            XmlNodeList nodeList = xml.GetElementsByTagName("Signature");
-            sxml.LoadXml((XmlElement)nodeList[0]);
-            VerifyTitle = sxml.SigningKeyName + "  " + sxml.SignedInfo + sxml.KeyInfo;
+            XmlElement xRoot = xml.DocumentElement;
+            XmlNode data = xRoot.LastChild;
+            var certdata = data.LastChild;
+            var certxml = certdata.LastChild;
+            var cert = certxml.LastChild;
+            string certstr = cert.InnerText;
+            byte[] certbyte = Encoding.UTF8.GetBytes(certstr);
+            X509Certificate2 certinfo = new X509Certificate2(Convert.FromBase64String(certstr));
+            VerifyTitle = certinfo.GetSerialNumberString() + " "+ certinfo.SubjectName.Name + "\n" + certinfo.NotAfter.ToShortDateString();
             return new HtmlResult(VerifyTitle);
         }
         public class HtmlResult : ActionResult
