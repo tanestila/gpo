@@ -450,6 +450,32 @@ function onCertificateSelected(event) {
     var certificate = oCerts.Item(1);
     FillCertInfo_NPAPI(certificate, event.target.boxId);
 }
+function Find_Cert(){
+    var xhr = new XMLHttpRequest();
+    var Data = document.getElementById('DataToVerifyTxtBox').value;
+    xhr.open('POST', '/api/Verify', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState != 4) return
+
+        clearTimeout(xhrTimeout) // очистить таймаут при наступлении readyState 4
+
+        if (xhr.status == 200) {
+            alert(xhr.responseText);
+        } else {
+            handleError(xhr.statusText) // вызвать обработчик ошибки с текстом ответа
+        }
+    }
+
+    xhr.send("pomoika");
+    // Таймаут 10 секунд
+    var xhrTimeout = setTimeout(function () { xhr.abort(); handleError("Timeout") }, 10000);
+
+    function handleError(message) {
+  // обработчик ошибки
+        alert("Ошибка: " + message)
+    }
+}
 function CertificateObj(certObj) {
     this.cert = certObj;
     this.certFromDate = new Date(this.cert.ValidFromDate);

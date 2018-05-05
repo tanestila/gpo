@@ -72,13 +72,23 @@
 
                         <div>
                             @using (Html.BeginForm("Verify", "Home", FormMethod.Post))
-                            {
+    {
                         <textarea id="DataToVerifyTxtBox" name="DataToVerifyTxtBox" style="height:200px;width:100%;resize:none;border:1;"></textarea>
 
                         <button id="VerifyBtn" name="VerifyData" type="button" class="btn btn-light" onclick="Verify();">Проверить</button>
-                        <button id="Verifybuton" name="VerifyData" type="submit"  class="btn btn-light">Проверить1</button>
-                            <p id="verify_msg" name="VerifyTitle"></p>
-                            }
+                        <button id="Verifybuton" name="VerifyData" type="button" class="btn btn-light" onclick="Find_Cert();">Проверить сертификат</button>
+                        <p id="verify_msg" name="VerifyTitle"></p>
+}
+                            <div id="cert_info">
+                                <h3 id="cert_txt" style="visibility:hidden">Информация о сертификате</h3>
+                                <p class="info_field" id="subject"></p>
+                                <p class="info_field" id="issuer"></p>
+                                <p class="info_field" id="from"></p>
+                                <p class="info_field" id="till"></p>
+                                <p class="info_field" id="provname"></p>
+                                <p class="info_field" id="algorithm"></p>
+                                <p class="info_field" id="status"></p>
+                            </div>
                         </div>
                     </div>
 

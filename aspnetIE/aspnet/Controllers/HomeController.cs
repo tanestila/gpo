@@ -49,7 +49,7 @@ namespace aspnet.Controllers
         // ActionResult поменять на стринг например и найти как выводить их формы (ищи)
         //или делать еще одну функцию на GET и там отдавать странице. (сложно)
         [HttpPost, ValidateInput(false)]
-        public ActionResult Verify(string DataToVerifyTxtBox, string VerifyTitle)
+        public string Verify(string DataToVerifyTxtBox)
         {
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(DataToVerifyTxtBox);
@@ -59,10 +59,9 @@ namespace aspnet.Controllers
             var certxml = certdata.LastChild;
             var cert = certxml.LastChild;
             string certstr = cert.InnerText;
-            byte[] certbyte = Encoding.UTF8.GetBytes(certstr);
             X509Certificate2 certinfo = new X509Certificate2(Convert.FromBase64String(certstr));
-            VerifyTitle = certinfo.GetSerialNumberString() + " "+ certinfo.SubjectName.Name + "\n" + certinfo.NotAfter.ToShortDateString();
-            return new HtmlResult(VerifyTitle);
+            string  VerifyTitle = certinfo.GetSerialNumberString() + " "+ certinfo.SubjectName.Name + "\n" + certinfo.NotAfter.ToShortDateString();
+            return VerifyTitle;
         }
         public class HtmlResult : ActionResult
         {
