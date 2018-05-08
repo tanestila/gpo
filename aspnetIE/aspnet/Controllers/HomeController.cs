@@ -10,10 +10,13 @@ using System.Xml;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Security.Cryptography.Xml;
+using aspnet.Models;
+
 namespace aspnet.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             return View();
@@ -49,19 +52,20 @@ namespace aspnet.Controllers
         // ActionResult поменять на стринг например и найти как выводить их формы (ищи)
         //или делать еще одну функцию на GET и там отдавать странице. (сложно)
         [HttpPost, ValidateInput(false)]
-        public string Verify(string DataToVerifyTxtBox)
+        public string Verify(string text)
         {
             XmlDocument xml = new XmlDocument();
-            xml.LoadXml(DataToVerifyTxtBox);
+            xml.LoadXml(text);
             XmlElement xRoot = xml.DocumentElement;
             XmlNode data = xRoot.LastChild;
             var certdata = data.LastChild;
             var certxml = certdata.LastChild;
             var cert = certxml.LastChild;
             string certstr = cert.InnerText;
-            X509Certificate2 certinfo = new X509Certificate2(Convert.FromBase64String(certstr));
-            string  VerifyTitle = certinfo.GetSerialNumberString() + " "+ certinfo.SubjectName.Name + "\n" + certinfo.NotAfter.ToShortDateString();
-            return VerifyTitle;
+            return certstr;
+            //X509Certificate2 certinfo = new X509Certificate2(Convert.FromBase64String(certstr));
+            //string  VerifyTitle = certinfo.GetSerialNumberString() + " "+ certinfo.SubjectName.Name + "\n" + certinfo.NotAfter.ToShortDateString();
+            //return VerifyTitle;
         }
         public class HtmlResult : ActionResult
         {

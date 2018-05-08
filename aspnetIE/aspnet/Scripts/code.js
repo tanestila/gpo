@@ -453,8 +453,10 @@ function onCertificateSelected(event) {
 function Find_Cert(){
     var xhr = new XMLHttpRequest();
     var Data = document.getElementById('DataToVerifyTxtBox').value;
-    xhr.open('POST', '/api/Verify', true);
+    xhr.open('POST', '/home/Verify', true);
+    var json = "text=" + Data;
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    //xhr.setRequestHeader('Accept', 'application/json');
     xhr.onreadystatechange = function () {
         if (xhr.readyState != 4) return
 
@@ -467,8 +469,7 @@ function Find_Cert(){
         }
     }
 
-    xhr.send("pomoika");
-    // Таймаут 10 секунд
+    xhr.send(json);
     var xhrTimeout = setTimeout(function () { xhr.abort(); handleError("Timeout") }, 10000);
 
     function handleError(message) {
