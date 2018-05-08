@@ -452,10 +452,12 @@ function onCertificateSelected(event) {
 }
 function Find_Cert(){
     var xhr = new XMLHttpRequest();
+    var data = new FormData();
     var Data = document.getElementById('DataToVerifyTxtBox').value;
+    data.append("text", Data);
     xhr.open('POST', '/home/Verify', true);
-    var json = "text=" + Data;
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    var json = "text=" + encodeURI(Data);
+    //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     //xhr.setRequestHeader('Accept', 'application/json');
     xhr.onreadystatechange = function () {
         if (xhr.readyState != 4) return
@@ -469,7 +471,7 @@ function Find_Cert(){
         }
     }
 
-    xhr.send(json);
+    xhr.send(data);
     var xhrTimeout = setTimeout(function () { xhr.abort(); handleError("Timeout") }, 10000);
 
     function handleError(message) {

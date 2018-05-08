@@ -11,6 +11,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Security.Cryptography.Xml;
 using aspnet.Models;
+using Newtonsoft.Json.Linq;
 
 namespace aspnet.Controllers
 {
@@ -54,18 +55,31 @@ namespace aspnet.Controllers
         [HttpPost, ValidateInput(false)]
         public string Verify(string text)
         {
-            XmlDocument xml = new XmlDocument();
-            xml.LoadXml(text);
-            XmlElement xRoot = xml.DocumentElement;
-            XmlNode data = xRoot.LastChild;
-            var certdata = data.LastChild;
-            var certxml = certdata.LastChild;
-            var cert = certxml.LastChild;
-            string certstr = cert.InnerText;
-            return certstr;
-            //X509Certificate2 certinfo = new X509Certificate2(Convert.FromBase64String(certstr));
-            //string  VerifyTitle = certinfo.GetSerialNumberString() + " "+ certinfo.SubjectName.Name + "\n" + certinfo.NotAfter.ToShortDateString();
-            //return VerifyTitle;
+            if (text == null)
+                return "Введите данные";
+            else
+            {
+                try
+                {
+                    XmlDocument xml = new XmlDocument();
+                    xml.LoadXml(text);
+                    XmlElement xRoot = xml.DocumentElement;
+                    XmlNode data = xRoot.LastChild;
+                    var certdata = data.LastChild;
+                    var certxml = certdata.LastChild;
+                    var cert = certxml.LastChild;
+                    string certstr = cert.InnerText;
+                    certstr = certstr.Trim();
+                    X509Certificate2 certinfo = new X509Certificate2(Convert.FromBase64String(certstr));
+                    string VerifyTitle = "Серийный номер: "+certinfo.GetSerialNumberString() + "\n"+ "Информация о владельце: " + certinfo.SubjectName.Name + "\n" + "Действителен до: " + certinfo.NotAfter.ToShortDateString() + "\n" + "Название издателя: " + certinfo.IssuerName.Name;
+                    return VerifyTitle;
+                }
+                catch (Exception e)
+                {
+                    return "Ошибка при обработке данных" + e.ToString();
+                }
+                
+            }
         }
         public class HtmlResult : ActionResult
         {

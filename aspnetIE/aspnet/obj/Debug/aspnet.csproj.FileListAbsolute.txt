@@ -731,3 +731,9 @@ C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\System.Web.Http.WebHos
 C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\System.Net.Http.Formatting.xml
 C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\System.Web.Http.xml
 C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\System.Web.Http.WebHost.xml
+C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Net.Http.Formatting.dll
+C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Web.Http.dll
+C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Web.Http.WebHost.dll
+C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Net.Http.Formatting.xml
+C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Web.Http.xml
+C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Web.Http.WebHost.xml
