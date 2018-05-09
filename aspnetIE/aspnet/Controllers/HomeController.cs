@@ -10,7 +10,6 @@ using System.Xml;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Security.Cryptography.Xml;
-using aspnet.Models;
 using Newtonsoft.Json.Linq;
 
 namespace aspnet.Controllers
@@ -49,9 +48,6 @@ namespace aspnet.Controllers
             }
             return RedirectToAction("Index");
         }
-        // НЕ НАШЛА ДАННЫХ О СЕРТИФИКАТЕ (лох, я нашел)
-        // ActionResult поменять на стринг например и найти как выводить их формы (ищи)
-        //или делать еще одну функцию на GET и там отдавать странице. (сложно)
         [HttpPost, ValidateInput(false)]
         public string Verify(string text)
         {

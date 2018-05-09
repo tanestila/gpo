@@ -723,7 +723,6 @@ C:\Users\Александра\Documents\GitHub\gpo\aspnetIE\aspnet\obj\Debug\asp
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\obj\Debug\aspnet.csprojResolveAssemblyReference.cache
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Security.Cryptography.Xml.dll
 C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\System.Security.Cryptography.Xml.dll
-C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\obj\Debug\aspnet.csprojResolveAssemblyReference.cache
 C:\Users\Александра\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Security.Cryptography.Xml.dll
 C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\System.Net.Http.Formatting.dll
 C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\System.Web.Http.dll
@@ -737,3 +736,4 @@ C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Web.Http.WebHost.
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Net.Http.Formatting.xml
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Web.Http.xml
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Web.Http.WebHost.xml
+C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\obj\Debug\aspnet.csprojAssemblyReference.cache
