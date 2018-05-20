@@ -737,3 +737,9 @@ C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Net.Http.Formatti
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Web.Http.xml
 C:\Users\pashk\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Web.Http.WebHost.xml
 C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\obj\Debug\aspnet.csprojAssemblyReference.cache
+C:\Users\Александра\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Net.Http.Formatting.dll
+C:\Users\Александра\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Web.Http.dll
+C:\Users\Александра\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Web.Http.WebHost.dll
+C:\Users\Александра\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Net.Http.Formatting.xml
+C:\Users\Александра\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Web.Http.xml
+C:\Users\Александра\Documents\GitHub\gpo\aspnetIE\aspnet\bin\System.Web.Http.WebHost.xml
