@@ -9,8 +9,11 @@ using System.Security.Cryptography;
 using System.Xml;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using aspnet.Controllers;
 using System.Security.Cryptography.Xml;
 using Newtonsoft.Json.Linq;
+using aspnet.Models;
+using System.Xml.Linq;
 
 namespace aspnet.Controllers
 {
@@ -34,8 +37,7 @@ namespace aspnet.Controllers
         }
         public void CreateXml(string text)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(text);
+            var doc = XDocument.Parse(text, LoadOptions.PreserveWhitespace);
             doc.Save(Server.MapPath("/SignedXml.xml"));
         }
         [HttpPost]
@@ -49,10 +51,10 @@ namespace aspnet.Controllers
             return RedirectToAction("Index");
         }
         [HttpPost, ValidateInput(false)]
-        public string Verify(string text)
+        public JsonResult Verify(string text)
         {
             if (text == null)
-                return "Введите данные";
+                return Json(new InfoCert { Message = "Введите данные" });
             else
             {
                 try
@@ -67,32 +69,22 @@ namespace aspnet.Controllers
                     string certstr = cert.InnerText;
                     certstr = certstr.Trim();
                     X509Certificate2 certinfo = new X509Certificate2(Convert.FromBase64String(certstr));
-                    string VerifyTitle = "Серийный номер: "+certinfo.GetSerialNumberString() + "\n"+ "Информация о владельце: " + certinfo.SubjectName.Name + "\n" + "Действителен до: " + certinfo.NotAfter.ToShortDateString() + "\n" + "Название издателя: " + certinfo.IssuerName.Name;
-                    return VerifyTitle;
+                    InfoCert response = new InfoCert()
+                    {
+                        Algorithm = certinfo.SignatureAlgorithm.FriendlyName,
+                        SerialNumber = certinfo.GetSerialNumberString(),
+                        NotAfter = certinfo.NotAfter.ToShortDateString(),
+                        SubjectName = certinfo.SubjectName.Name,
+                        IssuerName = certinfo.IssuerName.Name,
+                        Message = "Сертификат успешно распознан"
+                    };
+                    return Json(response);
                 }
                 catch (Exception e)
                 {
-                    return "Ошибка при обработке данных" + e.ToString();
+                    return Json(new InfoCert { Message = "Произошла ошибка при обработке" });
                 }
                 
-            }
-        }
-        public class HtmlResult : ActionResult
-        {
-            private string htmlCode;
-            public HtmlResult(string html)
-            {
-                htmlCode = html;
-            }
-            public override void ExecuteResult(ControllerContext context)
-            {
-                string fullHtmlCode = "<!DOCTYPE html><html><head>";
-                fullHtmlCode += "<title>Главная страница</title>";
-                fullHtmlCode += "<meta charset=utf-8 />";
-                fullHtmlCode += "</head> <body>";
-                fullHtmlCode += htmlCode;
-                fullHtmlCode += "</body></html>";
-                context.HttpContext.Response.Write(fullHtmlCode);
             }
         }
     }

@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="layout">
-                            <button id="SignBtn" name="SignData" type="button" class="btn btn-light" onclick="SignCadesXML_NPAPI('CertListBox');">Подписать</button>
+                            <button id="SignBtn" name="SignData" type="button" class="btn btn-light" onclick="SignCadesXML('CertListBox');">Подписать</button>
                         </div>
                         <p id="info_msg" name="SignatureTitle"></p>
                         <div id="item_border">
@@ -62,7 +62,7 @@
                     <textarea name="SignedXml" id="SignatureTxtBox" readonly hidden style="font-size:9pt;height:600px;width:100%;resize:none;border:0"></textarea>
 }
                             <script language="javascript">
-                                CheckForPlugIn_NPAPI('isPlugInEnabled');
+                                CheckForPlugIn('isPlugInEnabled');
                             </script>
                         </div>
                     </div>
@@ -71,35 +71,23 @@
                         <h3>Проверка подписи</h3>
 
                         <div>
-                            @using (Html.BeginForm("Verify", "Home", FormMethod.Post))
-                            {
-                                <textarea id="DataToVerifyTxtBox" name="DataToVerifyTxtBox" style="height:200px;width:100%;resize:none;border:1;"></textarea>
+                            <textarea id="DataToVerifyTxtBox" name="DataToVerifyTxtBox" style="height:200px;width:100%;resize:none;border:1;"></textarea>
 
-                                <button id="VerifyBtn" name="VerifyData" type="button" class="btn btn-light" onclick="Verify();">Проверить</button>
-                                <button id="Verifybuton" name="VerifyData" type="button" class="btn btn-light" onclick="Find_Cert();">Проверить сертификат</button>
-                                <p id="verify_msg" name="VerifyTitle"></p>
-                            }
-                            <input type="file" id="files" name="files[]" multiple />
-                            <output id="list"></output>
-
-                            <script>
-                                if (window.File && window.FileReader && window.FileList && window.Blob) {
-                                    // Great success! All the File APIs are supported.
-                                } else {
-                                    alert('Загрузка файлов не поддерживается данным браузером');
-                                }
-                                function handleFileSelect(evt) {
-                                    var files = evt.target.files; // FileList object
-                                    var output = [];
-                                    var reader = new FileReader();
-                                    for (var i = 0, f; f = files[i]; i++) {
-                                        reader.readAsText(f);
-                                        output.push = reader.result;
-                                    }
-                                    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-                                }
-                                document.getElementById('files').addEventListener('change', handleFileSelect, false);
-                            </script>
+                            <button id="VerifyBtn" name="VerifyData" type="button" class="btn btn-light" onclick="Verify();">Проверить подпись</button>
+                            <button id="Verifybuton" name="VerifyData" type="button" class="btn btn-light" onclick="Find_Cert();">Проверить сертификат</button>
+                            <div id="verify_info">
+                                <h3 id="txt_verify" style="visibility:hidden">Информация о подписи</h3>
+                                <p class="info_field" id="check_verify"></p>
+                            </div>
+                            <div id="cert_verify_info">
+                                <h3 id="cert_txt_verify" style="visibility:hidden">Информация о сертификате</h3>
+                                <p class="info_field" id="subject_verify"></p>
+                                <p class="info_field" id="issuer_verify"></p>
+                                <p class="info_field" id="notafter_verify"></p>
+                                <p class="info_field" id="serial_number_verify"></p>
+                                <p class="info_field" id="algorithm_verify"></p>
+                            </div>
+                            <p class="info_field" id="message_verify"></p>
                         </div>
                     </div>
 

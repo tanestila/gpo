@@ -1,8 +1,24 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<Data>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<lol>
 123
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256" /><DigestValue>vUynJ6Fgmdsa5hxZ1MQ9JdwlrgXwNj1oOhkG1S9qGSc=</DigestValue></Reference></SignedInfo><SignatureValue>KXyqU8NeILZN5B1S1WyewnAChf9JoaYNybythyURHuyxt9LAZUMR6OYmql69vGaJ
-MBcDZGUFjAqTKkxOz8A9gg==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIDcjCCAyGgAwIBAgITEgAmqJUX7BLs+bkOYAAAACaolTAIBgYqhQMCAgMwfzEj
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+<SignatureMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256" />
+<Reference URI="">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+<Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+</Transforms>
+<DigestMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256" />
+<DigestValue>6L7wChi1qXRT7v2x7HyvFy45ivCVyLGz8ODsqArVDSE=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>ZQQVVDyKF/LV0n6LtlThdl9Z/Hfz5HxqxzSQ5Pq5/8WKi6/c9WRlSeQx9ozQ5Vdj
+2ogjcPiFp6KQY2bm7RU4uw==</SignatureValue>
+<KeyInfo>
+<X509Data>
+<X509Certificate>MIIDcjCCAyGgAwIBAgITEgAmqJUX7BLs+bkOYAAAACaolTAIBgYqhQMCAgMwfzEj
 MCEGCSqGSIb3DQEJARYUc3VwcG9ydEBjcnlwdG9wcm8ucnUxCzAJBgNVBAYTAlJV
 MQ8wDQYDVQQHEwZNb3Njb3cxFzAVBgNVBAoTDkNSWVBUTy1QUk8gTExDMSEwHwYD
 VQQDExhDUllQVE8tUFJPIFRlc3QgQ2VudGVyIDIwHhcNMTgwMzE0MDUxNTA1WhcN
@@ -20,4 +36,7 @@ dHA6Ly90ZXN0Y2EuY3J5cHRvcHJvLnJ1L0NlcnRFbnJvbGwvdGVzdC1jYS0yMDE0
 X0NSWVBUTy1QUk8lMjBUZXN0JTIwQ2VudGVyJTIwMi5jcnQwNAYIKwYBBQUHMAGG
 KGh0dHA6Ly90ZXN0Y2EuY3J5cHRvcHJvLnJ1L29jc3Avb2NzcC5zcmYwCAYGKoUD
 AgIDA0EAOoPPmwZo+QrYwdv3vLwevdBW45Gk01sLq0YLcRrAkQigEUakEj1X1HTi
-FlmA9CYtnhPbxNyRUxJZ8zRtPiuAfA==</X509Certificate></X509Data></KeyInfo></Signature></Data>
+FlmA9CYtnhPbxNyRUxJZ8zRtPiuAfA==</X509Certificate>
+</X509Data>
+</KeyInfo>
+</Signature></lol>
