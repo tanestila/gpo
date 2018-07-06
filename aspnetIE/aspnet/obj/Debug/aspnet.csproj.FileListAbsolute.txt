@@ -566,8 +566,6 @@ C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\roslyn\vbc.rsp
 C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\roslyn\VBCSCompiler.exe
 C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\Antlr3.Runtime.dll
-C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\CryptoPro.Sharpei.Base.dll
-C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\CryptoPro.Sharpei.Xml.dll
 C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\Microsoft.AI.DependencyCollector.dll
 C:\Users\ДНС\Documents\GitHub\gpo1\aspnetIE\aspnet\bin\Microsoft.AI.PerfCounterCollector.dll

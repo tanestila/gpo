@@ -1,0 +1,95 @@
+﻿<div id="min-width">
+    <div id="container">
+        <h3 class="text-center">Подпись и проверка XmlDSig</h3>
+        <div class="mainContent">
+            <div id="info">
+                <div id="info_msg" style="text-align:center;">
+                    <span id="PlugInEnabledTxt">Проверка</span>
+                    <br>
+                    <span id="PlugInVersionTxt" lang="ru"> </span>
+                    <span id="CSPVersionTxt" lang="ru"> </span>
+                    <br>
+                    <span id="CSPNameTxt" lang="ru"> </span>
+                </div>
+            </div>
+
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#panel1">Подписать</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#panel2">Проверить</a></li>
+            </ul>
+
+            <div class="tab-content">
+
+                <div id="panel1" class="tab-pane active">
+                    <p id="info_msg" name="CertificateTitle">Сертификат:</p>
+                    <div id="item_border" name="CertListBoxToHide">
+                        <select size="4" name="CertListBox" id="CertListBox" style="width:100%;resize:none;border:0;"></select>
+                    </div>
+
+                    <div id="boxdiv" style="display:none">
+                        <span id="errorarea">
+                            У вас отсутствуют личные сертификаты. Вы можете получить сертификат от тестового УЦ, предварительно установив корневой сертификат тестового УЦ в доверенные.
+                        </span>
+                    </div>
+
+
+                    <div id="cert_info">
+                        <h3 id="cert_txt" style="visibility:hidden">Информация о сертификате</h3>
+                        <p class="info_field" id="subject"></p>
+                        <p class="info_field" id="issuer"></p>
+                        <p class="info_field" id="from"></p>
+                        <p class="info_field" id="till"></p>
+                        <p class="info_field" id="provname"></p>
+                        <p class="info_field" id="algorithm"></p>
+                        <p class="info_field" id="status"></p>
+                    </div>
+
+                    <p id="info_msg">Данные для подписи:</p>
+                    <div>
+                        <textarea id="DataToSignTxtBox" name="DataToSignTxtBox" style="height:200px;width:100%;resize:none;border:1;"></textarea>
+                    </div>
+
+                    <div class="layout">
+                        <button id="SignBtn" name="SignData" type="button" class="btn btn-light" onclick="SignCadesXML('CertListBox');">Подписать</button>
+                    </div>
+                    <p id="info_msg" name="SignatureTitle"></p>
+                    <div id="item_border">
+
+                        @using (Html.BeginForm("GetFile", "Home", FormMethod.Post))
+                        {
+                            <button id="LookBtn" type="button" name="Look" class="btn btn-light" onclick="LookSign();" hidden>Показать</button>
+                            <button id="DownloadBtn" type="submit" class="btn btn-light" hidden>Скачать</button>
+                            <textarea name="SignedXml" id="SignatureTxtBox" readonly hidden style="font-size:9pt;height:600px;width:100%;resize:none;border:0"></textarea>
+                        }
+                        <script language="javascript">
+                                CheckForPlugIn('isPlugInEnabled');
+                        </script>
+                    </div>
+                </div>
+
+                <div id="panel2" class="tab-pane fade">
+                    <h3>Проверка подписи</h3>
+
+                    <div>
+                        <textarea id="DataToVerifyTxtBox" name="DataToVerifyTxtBox" style="height:200px;width:100%;resize:none;border:1;"></textarea>
+                        <button id="Verifybuton" name="VerifyData" type="button" class="btn btn-light" onclick="Find_Cert();">Проверить подпись и сертификат</button>
+                        <div id="verify_info">
+                            <h3 id="txt_verify" style="visibility:hidden">Информация о подписи</h3>
+                            <p class="info_field" id="check_verify"></p>
+                        </div>
+                        <div id="cert_verify_info">
+                            <h3 id="cert_txt_verify" style="visibility:hidden">Информация о сертификате</h3>
+                            <p class="info_field" id="subject_verify"></p>
+                            <p class="info_field" id="issuer_verify"></p>
+                            <p class="info_field" id="notafter_verify"></p>
+                            <p class="info_field" id="serial_number_verify"></p>
+                            <p class="info_field" id="algorithm_verify"></p>
+                            <p class="info_field" id="correct_certificate_verify"></p>
+                        </div>
+                        <p class="info_field" id="message_verify"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

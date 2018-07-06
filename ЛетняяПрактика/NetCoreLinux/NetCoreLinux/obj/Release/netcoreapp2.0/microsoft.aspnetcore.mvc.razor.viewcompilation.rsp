@@ -1,0 +1,10 @@
+C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=NetCoreLinux
+--content-root=C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux
+--file=C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\Views\Home\Index.cshtml
+--file=C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\Views\Shared\Error.cshtml
+--file=C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\Views\Shared\_Layout.cshtml
+--file=C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\Views\_ViewImports.cshtml
+--file=C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\Views\_ViewStart.cshtml

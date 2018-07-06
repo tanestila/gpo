@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\ДНС\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\bin\Release\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/24/2018 17:44:14</publishTime>
+    </File>
+    <File Include="bin/ЛетняяПрактикаWCF.dll">
+      <publishTime>07/06/2018 12:55:45</publishTime>
+    </File>
+    <File Include="bin/ЛетняяПрактикаWCF.pdb">
+      <publishTime>07/06/2018 12:55:45</publishTime>
+    </File>
+    <File Include="Verifyservice.svc">
+      <publishTime>05/07/2018 23:32:58</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/07/2018 23:37:44</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\bin\Release\netcoreapp2.0\NetCoreLinux.deps.json
+C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\bin\Release\netcoreapp2.0\NetCoreLinux.runtimeconfig.json
+C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\bin\Release\netcoreapp2.0\NetCoreLinux.runtimeconfig.dev.json
+C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\bin\Release\netcoreapp2.0\NetCoreLinux.dll
+C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\bin\Release\netcoreapp2.0\NetCoreLinux.pdb
+C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\obj\Release\netcoreapp2.0\NetCoreLinux.csproj.CoreCompileInputs.cache
+C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\obj\Release\netcoreapp2.0\NetCoreLinux.AssemblyInfoInputs.cache
+C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\obj\Release\netcoreapp2.0\NetCoreLinux.AssemblyInfo.cs
+C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\obj\Release\netcoreapp2.0\NetCoreLinux.dll
+C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\obj\Release\netcoreapp2.0\NetCoreLinux.pdb
+C:\Users\ДНС\Documents\GitHub\gpo1\NetCoreLinux\NetCoreLinux\obj\Release\netcoreapp2.0\NetCoreLinux.csprojAssemblyReference.cache

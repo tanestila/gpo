@@ -1,0 +1,14 @@
+c:\users\днс\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\bin\ЛетняяПрактикаWCF.dll.config
+c:\users\днс\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\bin\ЛетняяПрактикаWCF.dll
+c:\users\днс\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\bin\ЛетняяПрактикаWCF.pdb
+c:\users\днс\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\bin\Newtonsoft.Json.dll
+c:\users\днс\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\bin\Newtonsoft.Json.xml
+c:\users\днс\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\obj\Release\Interop.CAdESCOM.dll
+c:\users\днс\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\obj\Release\Interop.CAPICOM.dll
+c:\users\днс\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\obj\Release\Interop.CERTENROLLLib.dll
+c:\users\днс\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\obj\Release\ЛетняяПрактикаWCF.csproj.ResolveComReference.cache
+c:\users\днс\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\obj\Release\ЛетняяПрактикаWCF.csproj.CoreCompileInputs.cache
+c:\users\днс\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\obj\Release\ЛетняяПрактикаWCF.csproj.CopyComplete
+c:\users\днс\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\obj\Release\ЛетняяПрактикаWCF.dll
+c:\users\днс\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\obj\Release\ЛетняяПрактикаWCF.pdb
+C:\Users\ДНС\source\repos\ЛетняяПрактикаWCF\ЛетняяПрактикаWCF\obj\Release\ЛетняяПрактикаWCF.csprojAssemblyReference.cache
